@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Pergunta Especial</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button-container {
+            margin-top: 20px;
+        }
+        .button {
+            font-size: 20px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Uma Pergunta Especial</h1>
+    <p>Você aceita namorar comigo?</p>
+    <div class="button-container">
+        <button class="button" onclick="handleYes()">Sim</button>
+        <button class="button" id="noButton">Não</button>
+    </div>
+
+    <script>
+        const noButton = document.getElementById('noButton');
+
+        noButton.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - noButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - noButton.offsetHeight);
+            noButton.style.position = 'absolute';
+            noButton.style.left = `${x}px`;
+            noButton.style.top = `${y}px`;
+        });
+
+        function handleYes() {
+            alert('Yay! Vamos namorar!');
+        }
+    </script>
+</body>
+</html>
